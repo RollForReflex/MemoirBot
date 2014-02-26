@@ -57,8 +57,8 @@ var postNewMemoir = function(bookObjects, query){
     var withoutStoryOfString = booksWithoutTheStoryOf[Math.floor(Math.random() * booksWithoutTheStoryOf.length)];
     var storyOfString = booksWithTheStoryOf[Math.floor(Math.random() * booksWithTheStoryOf.length)];
     
-    console.log(MakeMemoirTitle(withoutStoryOfString, storyOfString));
-    //twitter.postToTwitter(MakeMemoirTitle(withoutStoryOfString, storyOfString));        
+    //console.log(MakeMemoirTitle(withoutStoryOfString, storyOfString));
+    twitter.postToTwitter(MakeMemoirTitle(withoutStoryOfString, storyOfString));        
 };
 
 var MakeMemoirTitle = function(blank, theStoryOf){
@@ -69,5 +69,5 @@ var MakeMemoirTitle = function(blank, theStoryOf){
 //GetBookTitles("The Story of");
 // ...and then every hour after that. Time here is in milliseconds, so
 // 1000 ms = 1 second, 1 sec * 60 = 1 min, 1 min * 15 = 0.25 hour --> 1000 * 60 * 15
-setInterval(function(){ GetBookTitles("The Story of")}, 1000 * 60 * 0.5);
+setInterval(function(){ GetBookTitles("The Story of")}, 1000 * 60 * 15);
     
