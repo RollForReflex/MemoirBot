@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "description": "Twitter bot that generates memoir titles from Goodreads",
   "main": "main.js",
+  "engines": {
+    "node": "0.10.x"
+  }
   "dependencies": {
     "node-linq": "~0.0.3",
     "twit": "~1.1.12",
     "request": "~2.34.0",
-    "xml2js": "~0.4.1"
+    "xml2js": "~0.4.1",
+    "logfmt": "~0.21.0",
+    "express": "~3.4.8"
   },
   "devDependencies": {},
   "scripts": {
