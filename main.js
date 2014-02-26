@@ -5,6 +5,11 @@ var LINQ = require('node-linq').LINQ;
 var booksWithTheStoryOf = [];
 var booksWithoutTheStoryOf = [];
 
+var express = require("express");
+var app = express();
+
+app.listen(process.env.PORT || 5000);
+
 goodreads.setApiKey("NJqBNUurMVJ5IMT75Y3rQQ");
 goodreads.setApiSecret("mqIKx9Hf9RHoAiyaN9CZTaNCdz4WYGljKFG3wukNGSs");
 
