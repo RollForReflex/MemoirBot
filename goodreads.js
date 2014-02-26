@@ -40,7 +40,7 @@ exports.searchForBooks = function(query, page, field, callback){
         fieldParam = "&search[" + field + "]";
     }
     
-    console.log("dev key is: " + devKey);
+    //console.log("dev key is: " + devKey);
     
     exports.sendRequest(baseURL + "search.xml?q=" + encodeURI(query) + "&key=" + devKey + pageParam + fieldParam,
                         function(body){
@@ -50,23 +50,6 @@ exports.searchForBooks = function(query, page, field, callback){
                         }, function(err){
                             console.log("Error occured sending request: " + err);
                         });
-    
-    
-    /*request(baseURL + "search.xml?q=" + encodeURI(query) + "&key=" + devKey + pageParam + fieldParam,
-                function(err, response, body){
-                    
-                    if(err)
-                    {
-                        throw new Error(err);
-                        return;
-                    }
-                    
-                    
-                    if(response.statusCode == 200)
-                    parser.parseString(body, function(err, result){
-                        callback(result);
-                    });
-                });*/
 };
 
 exports.sendRequest = function(requestUrl, onSuccessCallback, onErrorCallback){
