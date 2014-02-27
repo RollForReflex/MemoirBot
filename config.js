@@ -1,7 +1,7 @@
 // Twitter API data
 module.exports = {
-    consumer_key: 'RgT1aVSU7GBakdpCUBoyrg',
-    consumer_secret: 'DPlTpJ9tBDDXgDrkF91NGax5SAJ3q3JZZoHN8WMlWM',
-    access_token: '2362787372-nq5cnZearvKOfU6ISnKLiIScpbEeG9dnp0OTrhz',
-    access_token_secret: 'xJ6A3rMAcSyDudsq5z66VUxIJkAOP5JI4L0SJ6k9ZprY4'
+    consumer_key: 'YOUR_CONSUMER_KEY',
+    consumer_secret: 'YOUR_CONSUMER_SECRET',
+    access_token: 'YOUR_ACCESS_TOKEN',
+    access_token_secret: 'YOUR_ACCESS_TOKEN_SECRET'
 }
