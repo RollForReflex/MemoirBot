@@ -8,7 +8,8 @@ var booksWithoutTheStoryOf = [];
 var express = require("express");
 var app = express();
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT);
+app.set('port', process.env.PORT || 3000);
 
 goodreads.setApiKey("NJqBNUurMVJ5IMT75Y3rQQ");
 goodreads.setApiSecret("mqIKx9Hf9RHoAiyaN9CZTaNCdz4WYGljKFG3wukNGSs");
@@ -59,10 +60,18 @@ var postNewMemoir = function(bookObjects, query){
     //console.log("Array length  1: " + booksWithTheStoryOf.length);
     //console.log("Array length  2: " + booksWithoutTheStoryOf.length);
 
-    var withoutStoryOfString = booksWithoutTheStoryOf[Math.floor(Math.random() * booksWithoutTheStoryOf.length)];
-    var storyOfString = booksWithTheStoryOf[Math.floor(Math.random() * booksWithTheStoryOf.length)];
+    var withoutStoryOfString = "";
+    var storyOfString =  "";
+    var memoirString = "";
     
-    //console.log(MakeMemoirTitle(withoutStoryOfString, storyOfString));
+    while(memoirString.length == 0 || memoirString.length > 140){
+        withoutStoryOfString = booksWithoutTheStoryOf[Math.floor(Math.random() * booksWithoutTheStoryOf.length)];
+        storyOfString =  booksWithTheStoryOf[Math.floor(Math.random() * booksWithTheStoryOf.length)];
+        
+        memoirString = MakeMemoirTitle(withoutStoryOfString, storyOfString); 
+    }
+    
+    console.log(memoirString);
     twitter.postToTwitter(MakeMemoirTitle(withoutStoryOfString, storyOfString));        
 };
 
@@ -74,5 +83,5 @@ var MakeMemoirTitle = function(blank, theStoryOf){
 //GetBookTitles("The Story of");
 // ...and then every hour after that. Time here is in milliseconds, so
 // 1000 ms = 1 second, 1 sec * 60 = 1 min, 1 min * 15 = 0.25 hour --> 1000 * 60 * 15
-setInterval(function(){ GetBookTitles("The Story of")}, 1000 * 60 * 15);
+setInterval(function(){ GetBookTitles("The Story of")}, 1000 * 60 * 0.5);
     
