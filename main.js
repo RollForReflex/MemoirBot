@@ -11,8 +11,8 @@ var app = express();
 app.listen(process.env.PORT);
 app.set('port', process.env.PORT || 3000);
 
-goodreads.setApiKey("NJqBNUurMVJ5IMT75Y3rQQ");
-goodreads.setApiSecret("mqIKx9Hf9RHoAiyaN9CZTaNCdz4WYGljKFG3wukNGSs");
+goodreads.setApiKey("YOUR_API_KEY");
+goodreads.setApiSecret("YOUR_API_SECRET");
 
 var GetBookTitles = function(query){
     var bookObjects = [];
